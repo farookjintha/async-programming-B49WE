@@ -3,6 +3,7 @@
 // JS -> single threaded language
 // default -> synchronous language
 
+// synchronous - blocking
 // asynchronous behaviour (non-blocking) => eventloop
 
 // console.log() callstack eventqueue micro-taskqueue (Promise) / macro-taskQueue ()
@@ -55,7 +56,9 @@ function passwordValidation() {}
 function addUser() {}
 
 // Disadvantages
+//  Callback Hell
 // Error handling is difficult in callback function
+// If any callback func gets error, it will affect the entire line up.
 
 // Nested Callback -> Callback Hell
 
