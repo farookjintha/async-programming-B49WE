@@ -35,16 +35,16 @@ var userObj = {
 
 // Reason -> if you want to execute certain function after some events or some execution
 
-function register(
+async function register(
   emailValidation,
   userValidation,
   passwordValidation,
   addUser
 ) {
-  emailValidation();
-  userValidation();
-  passwordValidation();
-  addUser();
+  await emailValidation();
+  await userValidation();
+  await passwordValidation();
+  await addUser();
 }
 
 function emailValidation() {}
@@ -63,23 +63,40 @@ function addUser() {}
 // Nested Callback -> Callback Hell
 
 function nestedCallback1(callback) {
-  console.log("Nested 1");
+  setTimeout(() => {
+    document.getElementById("myContainer").innerHTML =
+      "<h1>Happy Independence Day!</h1>";
+  }, 1000);
   callback();
 }
 
 function nestedCallback2(callback) {
-  console.log("Nested 2");
+  setTimeout(() => {
+    document.getElementById("myContainer").innerHTML = "<h1>1</h1>";
+  }, 1000);
+
   callback();
 }
 
 function nestedCallback3(callback) {
-  console.log("Nested 3");
+  setTimeout(() => {
+    document.getElementById("myContainer").innerHTML = "<h1>2</h1>";
+  }, 1000);
+
   callback();
 }
 
 function nestedCallback4(callback) {
-  console.log("Nested 4");
+  setTimeout(() => {
+    document.getElementById("myContainer").innerHTML = "<h1>3</h1>";
+  }, 1000);
   callback();
+}
+
+function nestedCallback5() {
+  setTimeout(() => {
+    document.getElementById("myContainer").innerHTML = "<h1>4</h1>";
+  }, 1000);
 }
 
 function myTimerFunction() {

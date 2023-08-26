@@ -124,3 +124,13 @@ console.log("USERS: ", usersData);
 
 // FETCH
 //   1. fetch(url) -> 2. returns Response (Information) ->  json() -> data
+
+// Promise Chaining
+step1
+  .then((result) => step2)
+  .then((result) => step3)
+  .then((result) => step4)
+  .catch((error) => errorHandling)
+  .finally(() => {
+    console.log("Finally executed");
+  });
